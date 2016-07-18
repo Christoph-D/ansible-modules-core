@@ -225,19 +225,25 @@ options:
   memory:
     description:
       - "Memory limit (format: <number>[<unit>]). Number is a positive integer.
-        Unit can be one of b, k, m, or g"
+        Unit is optional and can be `B` (bytes), `KB` (kilobytes), `MB` (megabytes), `GB` (gigabytes),
+        `TB` (terabytes), or `PB` (petabytes)."
+      - Omitting the unit defaults to bytes.
     default: 0
     required: false
   memory_reservation:
     description:
       - "Memory soft limit (format: <number>[<unit>]). Number is a positive integer.
-        Unit can be one of b, k, m, or g"
+        Unit is optional and can be `B` (bytes), `KB` (kilobytes), `MB` (megabytes), `GB` (gigabytes),
+        `TB` (terabytes), or `PB` (petabytes)."
+      - Omitting the unit defaults to bytes.
     default: 0
     required: false
   memory_swap:
     description:
-      - Total memory limit (memory + swap, format:<number>[<unit>]).
-        Number is a positive integer. Unit can be one of b, k, m, or g.
+      - "Total memory limit (memory + swap, format:<number>[<unit>]). Number is a positive integer.
+        Unit is optional and can be `B` (bytes), `KB` (kilobytes), `MB` (megabytes), `GB` (gigabytes),
+        `TB` (terabytes), or `PB` (petabytes)."
+      - Omitting the unit defaults to bytes.
     default: 0
     required: false
   memory_swappiness:
@@ -360,8 +366,9 @@ options:
   shm_size:
     description:
       - Size of `/dev/shm`. The format is `<number><unit>`. `number` must be greater than `0`.
-        Unit is optional and can be `b` (bytes), `k` (kilobytes), `m` (megabytes), or `g` (gigabytes).
-      - Omitting the unit defaults to bytes. If you omit the size entirely, the system uses `64m`.
+        Unit is optional and can be `B` (bytes), `KB` (kilobytes), `MB` (megabytes), `GB` (gigabytes),
+        `TB` (terabytes), or `PB` (petabytes).
+      - Omitting the unit defaults to bytes. If you omit the size entirely, the system uses `64MB`.
     default: null
     required: false
   security_opts:
