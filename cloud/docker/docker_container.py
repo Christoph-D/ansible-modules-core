@@ -185,7 +185,8 @@ options:
   kernel_memory:
     description:
       - "Kernel memory limit (format: <number>[<unit>]). Number is a positive integer.
-        Unit can be one of b, k, m, or g. Minimum is 4M."
+        Unit is optional and can be `B` (bytes), `KB` (kilobytes), `MB` (megabytes), `GB` (gigabytes),
+        `TB` (terabytes), or `PB` (petabytes). Minimum is 4MB."
     default: 0
     required: false
   labels:
@@ -666,6 +667,7 @@ except:
 
 
 REQUIRES_CONVERSION_TO_BYTES = [
+    'kernel_memory',
     'memory',
     'memory_reservation',
     'memory_swap',
